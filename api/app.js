@@ -55,6 +55,9 @@ app.post('/api/extract-keywords', async (req, res) => {
 
 export default app;
 
+const serverless = require("serverless-http");
+module.exports = serverless(app);
+
 // app.listen(3000, () => {
 //     console.log(`✅ Server is running on http://localhost:3000`);
 //   });
