@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "concurrently \"vite\" \"node --watch --env-file=.env app.js\"",
     "build": "vite build",
+    "build:vercel": "vite build && mv dist server/",
     "lint": "eslint .",
     "preview": "vite preview",
     "start": "node --watch --env-file=.env ./server/app.js"
