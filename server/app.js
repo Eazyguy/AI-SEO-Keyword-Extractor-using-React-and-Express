@@ -7,6 +7,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.get('/api', (req, res) => {
+  res.json({ status: 'ok' });
+});
+
   
 app.post('/api/extract-keywords', async (req, res) => {
   try {
