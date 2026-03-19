@@ -17,7 +17,7 @@ const App = () => {
     
       try {
         
-       const res = await fetch('http://localhost:3000/api/extract-keywords', {
+       const res = await fetch('/api/extract-keywords', {
         method:'POST',
         headers: {
           "Content-Type":"application/json",
