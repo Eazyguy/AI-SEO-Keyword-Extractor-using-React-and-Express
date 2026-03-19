@@ -4,14 +4,10 @@ import { OpenAI } from 'openai';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Serve static files from Vite build
-app.use(express.static(path.join(__dirname, '../dist')));
 
 app.get('/api', (req, res) => {
   res.json({ status: 'ok' });

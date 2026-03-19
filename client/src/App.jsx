@@ -17,7 +17,7 @@ const App = () => {
     
       try {
         
-       const res = await fetch('/api/extract-keywords', {
+       const res = await fetch('https://ai-seo-keyword-extractor-using-react-and-express-96yez411f.vercel.app/api/extract-keywords', {
         method:'POST',
         headers: {
           "Content-Type":"application/json",
