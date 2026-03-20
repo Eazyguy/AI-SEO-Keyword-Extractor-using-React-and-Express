@@ -28,7 +28,7 @@ const keywordsModal = ({keywords, loading, isOpen, closeModal}) => {
         <ModalContent>
           <ModalHeader>Keywords Result</ModalHeader>
           <ModalCloseButton />
-          <ModalBody display={'flex'} alignItems={'center'} justifyContent={'center'}>
+          <ModalBody display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'}>
             {loading ? (
               <CircularProgress isIndeterminate color='blue.300' />
             ) : (

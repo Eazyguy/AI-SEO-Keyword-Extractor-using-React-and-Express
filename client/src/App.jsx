@@ -47,7 +47,7 @@ const App = () => {
   return (
     
     <>
-      <Box bg={"blue.600"} height={'100vh' }paddingTop={130} color='white'>
+      <Box bg={"blue.600"} minH={'100vh' }paddingTop={130} color='white'>
         <Container maxW={'3xl'} centerContent>
         <Header/>
         <Textinput extractKeywords={extractKeywords} isOpen={isOpen}/>
