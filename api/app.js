@@ -4,13 +4,17 @@ import { OpenAI } from 'openai';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Serve static files from Vite build
+app.use(express.static(path.join(__dirname, '../dist')));
 
-app.get('/api', (req, res) => {
-  res.json({ status: 'ok' });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
 
   
@@ -58,6 +62,12 @@ app.post('/api/extract-keywords', async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-    console.log(`✅ Server is running on http://localhost:3000`);
+// Catch-all for client-side routing
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`✅ Server is running on http://localhost:${PORT}`);
   });
